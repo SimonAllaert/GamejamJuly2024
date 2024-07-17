@@ -30,13 +30,22 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"GamejamJuly2024",
-  "resources":[],
+  "resources":[
+    {"id":{"name":"obj_creationTool","path":"objects/obj_creationTool/obj_creationTool.yy",},},
+    {"id":{"name":"obj_hexEmpty","path":"objects/obj_hexEmpty/obj_hexEmpty.yy",},},
+    {"id":{"name":"Object3","path":"objects/Object3/Object3.yy",},},
+    {"id":{"name":"rm_testRoom","path":"rooms/rm_testRoom/rm_testRoom.yy",},},
+    {"id":{"name":"spr_hexEmpty","path":"sprites/spr_hexEmpty/spr_hexEmpty.yy",},},
+    {"id":{"name":"spr_man","path":"sprites/spr_man/spr_man.yy",},},
+  ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
-  "RoomOrderNodes":[],
+  "RoomOrderNodes":[
+    {"roomId":{"name":"rm_testRoom","path":"rooms/rm_testRoom/rm_testRoom.yy",},},
+  ],
   "templateType":"game",
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
