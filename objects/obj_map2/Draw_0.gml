@@ -1,6 +1,7 @@
-/// @description Color the clicked hex red.
+/// @description Insert description here
+// You can write your code in this editor
+draw_self()
 
-// get the odd-q coordinates of the mouse click
 var _hex_x = mouse_x div 37
 var _hex_y = -1
 
@@ -21,4 +22,5 @@ else  {
 }
 
 // draw red hex on the real coordinates
-instance_create_layer(_draw_x, _draw_y, "Tiles_1", obj_object2)
+draw_sprite(spr_tile_red, 0, _draw_x, _draw_y)
+//instance_create_layer(_draw_x, _draw_y, "Instances_2", obj_wall)

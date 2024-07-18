@@ -1,9 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_object2",
-  "eventList":[],
+  "%Name":"obj_map2",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_object2",
+  "name":"obj_map2",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_tile_red",
-    "path":"sprites/spr_tile_red/spr_tile_red.yy",
+    "name":"spr_map_white",
+    "path":"sprites/spr_map_white/spr_map_white.yy",
   },
   "spriteMaskId":null,
   "visible":true,

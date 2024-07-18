@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_object1",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_anicius",
+  "eventList":[],
   "managed":true,
-  "name":"obj_object1",
+  "name":"obj_anicius",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -30,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_map_white",
-    "path":"sprites/spr_map_white/spr_map_white.yy",
+    "name":"spr_anicius",
+    "path":"sprites/spr_anicius/spr_anicius.yy",
   },
   "spriteMaskId":null,
   "visible":true,
