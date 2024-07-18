@@ -21,4 +21,4 @@ else  {
 }
 
 // draw red hex on the real coordinates
-instance_create_layer(_draw_x, _draw_y, "Tiles_1", obj_object2)
+instance_create_layer(_draw_x, _draw_y, "Instances", obj_object2)
