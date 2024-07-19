@@ -41,7 +41,7 @@ for (var _r = 0; _r < array_length(layout); ++_r) {
 			step_tilepoint(_c);
 		}
 		else if (layout[_r][_c] == 3) {
-			//instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
+			instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
 			instance_create_depth(tilepoint_x, tilepoint_y, 0, obj_anicius);
 			step_tilepoint(_c);
 		}
