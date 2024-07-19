@@ -1,12 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"Anicius",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_walkway",
+  "eventList":[],
   "managed":true,
-  "name":"Anicius",
+  "name":"obj_walkway",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_anicius",
-    "path":"sprites/spr_anicius/spr_anicius.yy",
+    "name":"spr_tile_walk",
+    "path":"sprites/spr_tile_walk/spr_tile_walk.yy",
   },
   "spriteMaskId":null,
   "visible":true,

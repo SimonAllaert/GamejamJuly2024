@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+draw_self()
+
 var _curr_angle = point_direction(x + sprite_width/2, y + sprite_height/2, mouse_x, mouse_y)
 
 if (_curr_angle >= 0 and _curr_angle < 60) {
