@@ -1,23 +1,22 @@
 
 if (!is_moving) {
-	var _curr_angle = point_direction(x + sprite_width/2, y + sprite_height/2, mouse_x, mouse_y)
 
-	if (_curr_angle >= 0 and _curr_angle < 60) {
-		move_anicius(x + 36, y - 24);
+	if (curr_mouse_angle >= 0 and curr_mouse_angle < 60 and !upright_is_wall()) {
+		move_anicius(1);
 	}
-	else if (+_curr_angle >= 60 and _curr_angle < 120) {
-		move_anicius(x, y - 48);
+	else if (curr_mouse_angle >= 60 and curr_mouse_angle < 120 and !up_is_wall()) {
+		move_anicius(2);
 	}
-	else if (+_curr_angle >= 120 and _curr_angle < 180) {
-		move_anicius(x - 36, y - 24);
+	else if (curr_mouse_angle >= 120 and curr_mouse_angle < 180 and !upleft_is_wall()) {
+		move_anicius(3);
 	}
-	else if (+_curr_angle >= 180 and _curr_angle < 240) {
-		move_anicius(x - 36, y + 24);
+	else if (curr_mouse_angle >= 180 and curr_mouse_angle < 240 and !downleft_is_wall()) {
+		move_anicius(4);
 	}
-	else if (+_curr_angle >= 240 and _curr_angle < 300) {
-		move_anicius(x, y + 48);
+	else if (curr_mouse_angle >= 240 and curr_mouse_angle < 300 and !down_is_wall()) {
+		move_anicius(5);
 	}
-	else if (+_curr_angle >= 300 and _curr_angle < 360) {
-		move_anicius(x + 36, y + 24);
+	else if (curr_mouse_angle >= 300 and curr_mouse_angle < 360 and !downright_is_wall()) {
+		move_anicius(6);
 	}
 }

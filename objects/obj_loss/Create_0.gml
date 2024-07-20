@@ -42,7 +42,10 @@ for (var _r = 0; _r < array_length(layout); ++_r) {
 		}
 		else if (layout[_r][_c] == 3) {
 			instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
-			instance_create_depth(tilepoint_x, tilepoint_y, 0, obj_anicius);
+			var _anicius = instance_create_depth(tilepoint_x, tilepoint_y, 0, obj_anicius);
+			_anicius.curr_row = _r;
+			_anicius.curr_column = _c;
+			_anicius.layout = layout;
 			step_tilepoint(_c);
 		}
 		else if (layout[_r][_c] == 4) {
