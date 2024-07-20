@@ -1,15 +1,16 @@
-/// @description Insert description here
-// You can write your code in this editor
-
 layout = []
+curr_row = 0;
+curr_column = 0;
+
+curr_mouse_angle = 0
+
 is_moving = false;
 target_x = x;
 target_y = y;
-curr_row = 0;
-curr_column = 0;
-curr_mouse_angle = 0
 
 function move_anicius(_direction_number) {
+	//Handles pixel movement and updates row and column coords
+	//Direction is based of _direction_number; 1 is up-right continueing counter-clockwise
 	if (is_moving) {
 		return
 	}
