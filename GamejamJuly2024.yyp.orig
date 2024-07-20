@@ -35,6 +35,7 @@
   "name":"GamejamJuly2024",
   "resources":[
     {"id":{"name":"obj_anicius","path":"objects/obj_anicius/obj_anicius.yy",},},
+<<<<<<< HEAD
     {"id":{"name":"obj_loss","path":"objects/obj_loss/obj_loss.yy",},},
     {"id":{"name":"obj_object1","path":"objects/obj_object1/obj_object1.yy",},},
     {"id":{"name":"obj_object2","path":"objects/obj_object2/obj_object2.yy",},},
@@ -49,6 +50,17 @@
     {"id":{"name":"spr_potion_dashing","path":"sprites/spr_potion_dashing/spr_potion_dashing.yy",},},
     {"id":{"name":"spr_potion_empty","path":"sprites/spr_potion_empty/spr_potion_empty.yy",},},
     {"id":{"name":"spr_potion_fire","path":"sprites/spr_potion_fire/spr_potion_fire.yy",},},
+=======
+    {"id":{"name":"obj_floor","path":"objects/obj_floor/obj_floor.yy",},},
+    {"id":{"name":"obj_map1","path":"objects/obj_map1/obj_map1.yy",},},
+    {"id":{"name":"obj_map2","path":"objects/obj_map2/obj_map2.yy",},},
+    {"id":{"name":"obj_rat","path":"objects/obj_rat/obj_rat.yy",},},
+    {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_anicius","path":"sprites/spr_anicius/spr_anicius.yy",},},
+    {"id":{"name":"spr_map_white","path":"sprites/spr_map_white/spr_map_white.yy",},},
+    {"id":{"name":"spr_rat","path":"sprites/spr_rat/spr_rat.yy",},},
+>>>>>>> ewald-fuckery
     {"id":{"name":"spr_tile_red","path":"sprites/spr_tile_red/spr_tile_red.yy",},},
     {"id":{"name":"spr_tile_walk","path":"sprites/spr_tile_walk/spr_tile_walk.yy",},},
     {"id":{"name":"spr_tile_wall","path":"sprites/spr_tile_wall/spr_tile_wall.yy",},},

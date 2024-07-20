@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_wall",
+  "%Name":"obj_rat",
   "eventList":[],
   "managed":true,
-  "name":"obj_wall",
+  "name":"obj_rat",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_tile_wall",
-    "path":"sprites/spr_tile_wall/spr_tile_wall.yy",
+    "name":"spr_rat",
+    "path":"sprites/spr_rat/spr_rat.yy",
   },
   "spriteMaskId":null,
   "visible":true,

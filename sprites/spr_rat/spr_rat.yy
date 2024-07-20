@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_anicius",
+  "%Name":"spr_rat",
   "bboxMode":0,
-  "bbox_bottom":21,
-  "bbox_left":0,
-  "bbox_right":28,
+  "bbox_bottom":39,
+  "bbox_left":7,
+  "bbox_right":38,
   "bbox_top":7,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,18 +12,19 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f031e606-65f4-478b-94c3-349d19beb0fc","name":"f031e606-65f4-478b-94c3-349d19beb0fc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"865ce40b-bbfa-4fd8-82b5-2dabb2a0bbca","name":"865ce40b-bbfa-4fd8-82b5-2dabb2a0bbca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":36,
+  "height":48,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"8fafdbb3-6365-4c2a-abe2-a8f1e818478b","blendMode":0,"displayName":"default","isLocked":false,"name":"8fafdbb3-6365-4c2a-abe2-a8f1e818478b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"7213dddc-e448-4885-be13-cd6a221e04d0","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"7213dddc-e448-4885-be13-cd6a221e04d0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ca18ee93-6d8f-40bb-b021-93a719cfb062","blendMode":0,"displayName":"default","isLocked":false,"name":"ca18ee93-6d8f-40bb-b021-93a719cfb062","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
-  "name":"spr_anicius",
+  "name":"spr_rat",
   "nineSlice":null,
-  "origin":4,
+  "origin":0,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -33,7 +34,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_anicius",
+    "%Name":"spr_rat",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +58,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_anicius",
+    "name":"spr_rat",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,24 +70,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-<<<<<<< HEAD
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f031e606-65f4-478b-94c3-349d19beb0fc","path":"sprites/spr_anicius/spr_anicius.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a35304e3-bd92-42e0-ad70-bac84fb5e704","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-=======
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cce471da-3eb3-4b37-af79-7150d93ec908","path":"sprites/spr_anicius/spr_anicius.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"12af4bb1-2efb-47e7-9f49-efc25d729f4b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
->>>>>>> ewald-fuckery
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"865ce40b-bbfa-4fd8-82b5-2dabb2a0bbca","path":"sprites/spr_rat/spr_rat.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"43e83659-13d4-4aaa-9436-e8e14cc186e6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-<<<<<<< HEAD
-    "xorigin":18,
-    "yorigin":18,
-=======
     "xorigin":0,
     "yorigin":0,
->>>>>>> ewald-fuckery
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -96,9 +87,5 @@
   },
   "type":0,
   "VTile":false,
-<<<<<<< HEAD
-  "width":36,
-=======
   "width":48,
->>>>>>> ewald-fuckery
 }

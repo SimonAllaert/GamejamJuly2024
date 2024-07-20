@@ -2,16 +2,24 @@
   "$GMSprite":"",
   "%Name":"spr_anicius",
   "bboxMode":0,
+<<<<<<< HEAD
   "bbox_bottom":21,
   "bbox_left":0,
   "bbox_right":28,
   "bbox_top":7,
+=======
+  "bbox_bottom":47,
+  "bbox_left":0,
+  "bbox_right":47,
+  "bbox_top":0,
+>>>>>>> ewald-fuckery
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
+<<<<<<< HEAD
     {"$GMSpriteFrame":"","%Name":"f031e606-65f4-478b-94c3-349d19beb0fc","name":"f031e606-65f4-478b-94c3-349d19beb0fc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
@@ -24,6 +32,20 @@
   "name":"spr_anicius",
   "nineSlice":null,
   "origin":4,
+=======
+    {"$GMSpriteFrame":"","%Name":"cce471da-3eb3-4b37-af79-7150d93ec908","name":"cce471da-3eb3-4b37-af79-7150d93ec908","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+  ],
+  "gridX":0,
+  "gridY":0,
+  "height":48,
+  "HTile":false,
+  "layers":[
+    {"$GMImageLayer":"","%Name":"a1706d80-a261-4a17-803a-6d400c3cefaf","blendMode":0,"displayName":"default","isLocked":false,"name":"a1706d80-a261-4a17-803a-6d400c3cefaf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+  ],
+  "name":"spr_anicius",
+  "nineSlice":null,
+  "origin":0,
+>>>>>>> ewald-fuckery
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
