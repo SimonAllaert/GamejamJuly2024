@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_anicius",
+    "path":"sprites/spr_anicius/spr_anicius.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
