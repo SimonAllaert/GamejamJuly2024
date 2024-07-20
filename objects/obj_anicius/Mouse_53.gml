@@ -1,5 +1,5 @@
 
-if (!is_moving) {
+if (!is_moving and !potion_hover) {
 
 	if (curr_mouse_angle >= 0 and curr_mouse_angle < 60 and !upright_is_wall()) {
 		move_anicius(1);

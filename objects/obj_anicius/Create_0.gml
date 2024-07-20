@@ -1,12 +1,18 @@
-layout = []
+layout = [];
 curr_row = 0;
 curr_column = 0;
 
-curr_mouse_angle = 0
+curr_mouse_angle = 0;
 
 is_moving = false;
 target_x = x;
 target_y = y;
+
+//Inventory will be loaded from room
+//[Empty bottles, Fire breathing, Blinking, Blowback]
+inventory = [0, 0, 0, 0];
+potion_hover = false;
+potion_active = 0;
 
 function move_anicius(_direction_number) {
 	//Handles pixel movement and updates row and column coords

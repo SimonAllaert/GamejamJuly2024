@@ -16,6 +16,9 @@ layout = [
 tilepoint_x = 48;
 tilepoint_y = 48;
 
+anicius = noone;
+
+//Helper function for generating tiles
 function step_tilepoint(_c) {
 	tilepoint_x += 36;
 		if (_c % 2 > 0) {
@@ -26,6 +29,7 @@ function step_tilepoint(_c) {
 		}
 }
 
+//Generates tiles accoring to layout arrays
 for (var _r = 0; _r < array_length(layout); ++_r) {
 	for (var _c = 0; _c < array_length(layout[0]); ++_c) {
 		if (layout[_r][_c] == 0) {
@@ -42,10 +46,11 @@ for (var _r = 0; _r < array_length(layout); ++_r) {
 		}
 		else if (layout[_r][_c] == 3) {
 			instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
-			var _anicius = instance_create_depth(tilepoint_x, tilepoint_y, 0, obj_anicius);
-			_anicius.curr_row = _r;
-			_anicius.curr_column = _c;
-			_anicius.layout = layout;
+			anicius = instance_create_depth(tilepoint_x, tilepoint_y, 0, obj_anicius);
+			anicius.curr_row = _r;
+			anicius.curr_column = _c;
+			anicius.layout = layout;
+			anicius.inventory = [0, 1, 1, 1];
 			step_tilepoint(_c);
 		}
 		else if (layout[_r][_c] == 4) {

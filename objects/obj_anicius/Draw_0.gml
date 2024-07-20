@@ -1,7 +1,7 @@
 draw_self()
 
 //Draws preview arrows for movement in direction of mouse if Anicius is not moving
-if (!is_moving) {
+if (!is_moving and !potion_hover) {
 
 	if (curr_mouse_angle >= 0 and curr_mouse_angle < 60 and !upright_is_wall()) {
 		draw_sprite_ext(spr_walk_marker, 0, x + 36, y - 24, 1, 1, 30, c_white, 1)
