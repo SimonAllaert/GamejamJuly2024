@@ -13,6 +13,9 @@ if (anicius != noone) {
 		draw_sprite(spr_potion_fire, 1, room_width, 192);
 		_fire_hover = true;
 	}
+	else if (anicius.potion_active == 1) {
+		draw_sprite(spr_potion_fire, 1, room_width, 192);
+	}
 	else {
 		draw_sprite(spr_potion_fire, 0, room_width, 192);
 	}
@@ -21,6 +24,9 @@ if (anicius != noone) {
 	if (point_in_rectangle(mouse_x, mouse_y, room_width - 48, 264, room_width, 264+48)) {
 		draw_sprite(spr_potion_dashing, 1, room_width, 264);
 		_dash_hover = true;
+	}
+	else if (anicius.potion_active == 2) {
+		draw_sprite(spr_potion_dashing, 1, room_width, 264);
 	}
 	else {
 		draw_sprite(spr_potion_dashing, 0, room_width, 264);
@@ -31,6 +37,9 @@ if (anicius != noone) {
 		draw_sprite(spr_potion_blowback, 1, room_width, 336);
 		_blow_hover = true;
 	}
+	else if (anicius.potion_active == 3) {
+		draw_sprite(spr_potion_blowback, 1, room_width, 336);
+	}
 	else{
 		draw_sprite(spr_potion_blowback, 0, room_width, 336);
 	}
@@ -39,6 +48,9 @@ if (anicius != noone) {
 	if (point_in_rectangle(mouse_x, mouse_y, room_width - 48, 408, room_width, 408+48)) {
 		draw_sprite(spr_potion_lightning, 1, room_width, 408);
 		_lightning_hover = true;
+	}
+	else if (anicius.potion_active == 4) {
+		draw_sprite(spr_potion_lightning, 1, room_width, 408);
 	}
 	else {
 		draw_sprite(spr_potion_lightning, 0, room_width, 408);

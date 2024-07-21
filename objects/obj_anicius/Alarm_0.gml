@@ -2,3 +2,4 @@
 give_enemy_action();
 fire_target = [];
 potion_active = 0;
+inventory[0]--;

@@ -44,7 +44,8 @@ function get_downright_coords(_row, _col) {
 
 function upright_is_wall(_row, _col) {
 	var _coords = get_upright_coords(_row, _col);
-	return global.layout[_coords[0]][_coords[1]] == 1;
+	var _output = global.layout[_coords[0]][_coords[1]]
+	return _output == 1;
 }
 
 function up_is_wall(_row, _col) {

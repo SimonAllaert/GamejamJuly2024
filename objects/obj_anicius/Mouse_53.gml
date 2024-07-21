@@ -67,3 +67,7 @@ else if (!potion_hover and potion_active == 2) {
 		cast_dash(6);
 	}
 }
+//Cast blowback action
+else if (!potion_hover and potion_active == 3) {
+	cast_blowback()
+}

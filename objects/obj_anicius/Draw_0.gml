@@ -167,3 +167,71 @@ else if (!potion_hover and potion_active == 2) {
 		}
 	}
 }
+//Draws preview of blowback cast
+else if (!potion_hover and potion_active == 3) {
+	//Space of Anicius
+	draw_sprite_ext(spr_tile_blowback, 0, x, y, 1, 1, 0, c_white, 0.5);
+	//All adjacent hexes to check outer ring later
+	var _upright_tile = get_upright_coords(curr_row, curr_column);
+	var _up_tile = get_up_coords(curr_row, curr_column);
+	var _upleft_tile = get_upleft_coords(curr_row, curr_column);
+	var _downleft_tile = get_downleft_coords(curr_row, curr_column);
+	var _down_tile = get_down_coords(curr_row, curr_column);
+	var _downright_tile = get_downright_coords(curr_row, curr_column);
+	//Check all adjacent hexes and the one straight after
+	if (!upright_is_wall(curr_row, curr_column)) {
+		draw_sprite_ext(spr_tile_blowback, 0, x + 36, y - 24, 1, 1, 0, c_white, 0.5);
+		if (!upright_is_wall(_upright_tile[0], _upright_tile[1])) {
+			draw_sprite_ext(spr_tile_blowback, 0, x + 36 + 36, y - 24 - 24, 1, 1, 0, c_white, 0.5);
+		}
+	}
+	if (!up_is_wall(curr_row, curr_column)) {
+		draw_sprite_ext(spr_tile_blowback, 0, x, y - 48, 1, 1, 0, c_white, 0.5);
+		if (!up_is_wall(_up_tile[0], _up_tile[1])) {
+			draw_sprite_ext(spr_tile_blowback, 0, x, y - 48 - 48, 1, 1, 0, c_white, 0.5);
+		}
+	}
+	if (!upleft_is_wall(curr_row, curr_column)) {
+		draw_sprite_ext(spr_tile_blowback, 0, x - 36, y - 24, 1, 1, 0, c_white, 0.5);
+		if (!upleft_is_wall(_upleft_tile[0], _upleft_tile[1])) {
+			draw_sprite_ext(spr_tile_blowback, 0, x - 36 - 36, y - 24 - 24, 1, 1, 0, c_white, 0.5);
+		}
+	}
+	if (!downleft_is_wall(curr_row, curr_column)) {
+		draw_sprite_ext(spr_tile_blowback, 0, x - 36, y + 24, 1, 1, 0, c_white, 0.5);
+		if (!downleft_is_wall(_downleft_tile[0], _downleft_tile[1])) {
+			draw_sprite_ext(spr_tile_blowback, 0, x - 36 - 36, y + 24 + 24, 1, 1, 0, c_white, 0.5);
+		}
+	}
+	if (!down_is_wall(curr_row, curr_column)) {
+		draw_sprite_ext(spr_tile_blowback, 0, x, y + 48, 1, 1, 0, c_white, 0.5);
+		if (!down_is_wall(_down_tile[0], _down_tile[1])) {
+			draw_sprite_ext(spr_tile_blowback, 0, x, y + 48 + 48, 1, 1, 0, c_white, 0.5);
+		}
+	}
+	if (!downright_is_wall(curr_row, curr_column)) {
+		draw_sprite_ext(spr_tile_blowback, 0, x + 36, y + 24, 1, 1, 0, c_white, 0.5);
+		if (!downright_is_wall(_downright_tile[0], _downright_tile[1])) {
+			draw_sprite_ext(spr_tile_blowback, 0, x + 36 + 36, y + 24 + 24, 1, 1, 0, c_white, 0.5);
+		}
+	}
+	//Check corners if at least one of the inner neighbours isnt a wall
+	if ((!upright_is_wall(curr_row, curr_column) or !up_is_wall(curr_row, curr_column)) and !up_is_wall(_upright_tile[0], _upright_tile[1])) {
+		draw_sprite_ext(spr_tile_blowback, 0, x + 36, y - 24 - 48, 1, 1, 0, c_white, 0.5);
+	}
+	if ((!up_is_wall(curr_row, curr_column) or !upleft_is_wall(curr_row, curr_column)) and !upleft_is_wall(_up_tile[0], _up_tile[1])) {
+		draw_sprite_ext(spr_tile_blowback, 0, x - 36, y - 24 - 48, 1, 1, 0, c_white, 0.5);
+	}
+	if ((!upleft_is_wall(curr_row, curr_column) or !downleft_is_wall(curr_row, curr_column)) and !downleft_is_wall(_upleft_tile[0], _upleft_tile[1])) {
+		draw_sprite_ext(spr_tile_blowback, 0, x - 36 - 36, y - 24 + 24, 1, 1, 0, c_white, 0.5);
+	}
+	if ((!downleft_is_wall(curr_row, curr_column) or !down_is_wall(curr_row, curr_column)) and !down_is_wall(_downleft_tile[0], _downleft_tile[1])) {
+		draw_sprite_ext(spr_tile_blowback, 0, x - 36, y + 24 + 48, 1, 1, 0, c_white, 0.5);
+	}
+	if ((!down_is_wall(curr_row, curr_column) or !downright_is_wall(curr_row, curr_column)) and !downright_is_wall(_down_tile[0], _down_tile[1])) {
+		draw_sprite_ext(spr_tile_blowback, 0, x + 36, y + 24 + 48, 1, 1, 0, c_white, 0.5);
+	}
+	if ((!downright_is_wall(curr_row, curr_column) or !upright_is_wall(curr_row, curr_column)) and !upright_is_wall(_downright_tile[0], _downright_tile[1])) {
+		draw_sprite_ext(spr_tile_blowback, 0, x + 36 + 36, y - 24 + 24, 1, 1, 0, c_white, 0.5);
+	}
+}
