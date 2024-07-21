@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"GamejamJuly2024",
   "resources":[
@@ -53,6 +53,7 @@
     {"id":{"name":"spr_potion_lightning","path":"sprites/spr_potion_lightning/spr_potion_lightning.yy",},},
     {"id":{"name":"spr_tile_dash","path":"sprites/spr_tile_dash/spr_tile_dash.yy",},},
     {"id":{"name":"spr_tile_fire","path":"sprites/spr_tile_fire/spr_tile_fire.yy",},},
+    {"id":{"name":"spr_rat","path":"sprites/spr_rat/spr_rat.yy",},},
     {"id":{"name":"spr_tile_red","path":"sprites/spr_tile_red/spr_tile_red.yy",},},
     {"id":{"name":"spr_tile_walk","path":"sprites/spr_tile_walk/spr_tile_walk.yy",},},
     {"id":{"name":"spr_tile_wall","path":"sprites/spr_tile_wall/spr_tile_wall.yy",},},

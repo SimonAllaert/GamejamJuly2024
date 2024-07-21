@@ -8,5 +8,6 @@
     {"name":"spr_cast_fire","order":3,"path":"sprites/spr_cast_fire/spr_cast_fire.yy",},
     {"name":"spr_tile_dash","order":4,"path":"sprites/spr_tile_dash/spr_tile_dash.yy",},
     {"name":"spr_tile_fire","order":2,"path":"sprites/spr_tile_fire/spr_tile_fire.yy",},
+    {"name":"spr_rat","order":2,"path":"sprites/spr_rat/spr_rat.yy",},
   ],
 }
