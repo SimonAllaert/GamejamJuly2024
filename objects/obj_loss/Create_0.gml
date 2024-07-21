@@ -1,5 +1,5 @@
 
-//Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4
+//Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4, Rat = 5
 variable_global_set("layout", [
 	[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
 	[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],

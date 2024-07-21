@@ -390,116 +390,20 @@ function end_cast_dash() {
 }
 
 function cast_blowback() {
-	//Start at up-right tile 2 tiles away, works way around outer layer and then inner layer
-	var _tiletracker = get_upright_coords(curr_row, curr_column);
-	//up-right outer
-	_tiletracker = get_upright_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 1);
-	//up-right diagonal
-	_tiletracker = get_upleft_coords(_tiletracker[0], _tiletracker[1]);
-	if (upright_is_empty(_tiletracker[0], _tiletracker[1]) and up_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], irandom(1)+1);
-	}
-	else if (upright_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 1);
-	}
-	else if (up_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 2);
-	}
-	//up outer
-	_tiletracker = get_upleft_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 2);
-	//up-left diagonal
-	_tiletracker = get_downleft_coords(_tiletracker[0], _tiletracker[1]);
-	if (up_is_empty(_tiletracker[0], _tiletracker[1]) and upleft_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], irandom(1)+2);
-	}
-	else if (up_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 2);
-	}
-	else if (upleft_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 3);
-	}
-	//up-left outer
-	_tiletracker = get_downleft_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 3);
-	//left diagonal
-	_tiletracker = get_down_coords(_tiletracker[0], _tiletracker[1]);
-	if (upleft_is_empty(_tiletracker[0], _tiletracker[1]) and downleft_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], irandom(1)+3);
-	}
-	else if (upleft_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 3);
-	}
-	else if (downleft_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 4);
-	}
-	//down-left outer
-	_tiletracker = get_down_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 4);
-	//down-left diagonal
-	_tiletracker = get_downright_coords(_tiletracker[0], _tiletracker[1]);
-	if (downleft_is_empty(_tiletracker[0], _tiletracker[1]) and down_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], irandom(1)+4);
-	}
-	else if (downleft_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 4);
-	}
-	else if (down_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 5);
-	}
-	//down outer
-	_tiletracker = get_downright_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 5);
-	//down-right diagonal
-	_tiletracker = get_upright_coords(_tiletracker[0], _tiletracker[1]);
-	if (down_is_empty(_tiletracker[0], _tiletracker[1]) and downright_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], irandom(1)+5);
-	}
-	else if (down_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 5);
-	}
-	else if (downright_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 6);
-	}
-	//down-right outer
-	_tiletracker = get_upright_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 6);
-	//right diagonal
-	if (downright_is_empty(_tiletracker[0], _tiletracker[1]) and upright_is_empty(_tiletracker[0], _tiletracker[1])) {
-		if (irandom(1) == 1) {
-			blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 1);
-		}
-		else {
-			blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 6);
-		}
-	}
-	else if (downright_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 6);
-	}
-	else if (upright_is_empty(_tiletracker[0], _tiletracker[1])) {
-		blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 1);
-	}
-	//up-right inner
-	_tiletracker = get_upleft_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 1);
-	//up inner
-	_tiletracker = get_upleft_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 2);
-	//up-left inner
-	_tiletracker = get_downright_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 3);
-	//down-left inner
-	_tiletracker = get_down_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 4);
-	//down inner
-	_tiletracker = get_downright_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 5);
-	//down-right inner
-	_tiletracker = get_upright_coords(_tiletracker[0], _tiletracker[1]);
-	blowback_enemy_on_hex(_tiletracker[0], _tiletracker[1], 6);
+	var _upright_tile = get_upright_coords(curr_row, curr_column);
+	var _up_tile = get_up_coords(curr_row, curr_column);
+	var _upleft_tile = get_upleft_coords(curr_row, curr_column);
+	var _downleft_tile = get_downleft_coords(curr_row, curr_column);
+	var _down_tile = get_down_coords(curr_row, curr_column);
+	var _downright_tile = get_downright_coords(curr_row, curr_column);
+	blowback_enemy_on_hex(_upright_tile[0], _upright_tile[1], 1);
+	blowback_enemy_on_hex(_up_tile[0], _up_tile[1], 2);
+	blowback_enemy_on_hex(_upleft_tile[0], _upleft_tile[1], 3);
+	blowback_enemy_on_hex(_downleft_tile[0], _downleft_tile[1], 4);
+	blowback_enemy_on_hex(_down_tile[0], _down_tile[1], 5);
+	blowback_enemy_on_hex(_downright_tile[0], _downright_tile[1], 6);
 	
-	move_anicius(random_legal_move(curr_row, curr_column));
+	//move_anicius(random_legal_move(curr_row, curr_column));
 	image_angle = 10;
 	give_enemy_action();
 	potion_active = 0;
