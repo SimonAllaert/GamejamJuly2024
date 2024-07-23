@@ -516,3 +516,15 @@ function drink_pot(_pot_id) {
 	//Fire = 0, Dashing = 1, Blowback = 2, Lightning = 3
 	potion_active = _pot_id + 1;
 }
+
+/*==========LIGHTING START==========*/
+
+surf = -1
+
+vertex_format_begin()
+vertex_format_add_position()
+vertex_format_add_color()
+vertex_format = vertex_format_end()
+vertex_buffer = vertex_create_buffer()
+
+/*==========LIGHTING END==========*/

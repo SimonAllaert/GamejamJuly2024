@@ -22,3 +22,11 @@ if (image_angle > 0) {
 		image_angle = 0;
 	}
 }
+
+
+/*==========LIGHTING START==========*/
+
+if (!surface_exists(surf))
+	surf = surface_create(room_width, room_height) //TODO: map width, map height
+
+/*==========LIGHTING END==========*/

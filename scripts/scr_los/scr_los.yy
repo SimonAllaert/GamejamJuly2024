@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_enemies",
+  "%Name":"scr_los",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_enemies",
+  "name":"scr_los",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

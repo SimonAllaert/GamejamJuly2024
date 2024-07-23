@@ -1,3 +1,30 @@
+/*=========LIGHTING START==========*/
+
+function lighting() {
+	surface_set_target(surf)
+	draw_clear_alpha(0, 0)
+
+	vertex_begin(vertex_buffer, vertex_format)
+	for (row = 0; row < array_length(global.layout); row++) {
+		for (col = 0; col < array_length(global.layout[0]); col++) {
+			if global.layout[row][col] != 1 continue
+			corner_points = get_ch(hex_to_pixel(row, col))
+			for (i = 0; i < array_length(corner_points) - 1; i++) 
+				project_shadow(vertex_buffer, corner_points[i], corner_points[i+1], [x, y])
+			project_shadow(vertex_buffer, corner_points[array_length(corner_points) - 1], corner_points[0], [x, y])
+		}
+	}
+	vertex_end(vertex_buffer)
+	vertex_submit(vertex_buffer, pr_trianglelist, -1)
+	
+	surface_reset_target()
+	draw_surface(surf, 0, 0)
+}
+
+lighting()
+
+/*=========LIGHTING END==========*/
+
 draw_self()
 
 //Draws preview arrows for movement in direction of mouse if Anicius is not moving

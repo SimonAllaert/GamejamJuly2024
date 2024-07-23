@@ -119,3 +119,9 @@ function random_legal_move(_row, _col) {
 	}
 	return _empty_moves[irandom(array_length(_empty_moves)-1)];
 }
+
+function hex_to_pixel(_row, _col) {
+	return (_col % 2 == 1) 
+				? [global.origin[0] + _col * 36, global.origin[1] + 24 + _row * 48] 
+				: [global.origin[0] + _col * 36, global.origin[1] + _row * 48]
+}
