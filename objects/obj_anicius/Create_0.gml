@@ -160,7 +160,7 @@ function cast_fire(_direction_number) {
 				kill_enemy_on_hex(_next_tile[0], _next_tile[1]);
 				if (!upleft_is_wall(_next_tile[0], _next_tile[1])) {
 					array_push(fire_target, [x - 36 - 36 - 36, y - 24 - 24 - 24]);
-					_next_tile = get_downright_coords(_next_tile[0], _next_tile[1]);
+					_next_tile = get_upleft_coords(_next_tile[0], _next_tile[1]);
 					kill_enemy_on_hex(_next_tile[0], _next_tile[1]);
 				}
 			}
@@ -177,7 +177,7 @@ function cast_fire(_direction_number) {
 				kill_enemy_on_hex(_next_tile[0], _next_tile[1]);
 				if (!downleft_is_wall(_next_tile[0], _next_tile[1])) {
 					array_push(fire_target, [x - 36 - 36 - 36, y + 24 + 24 + 24]);
-					_next_tile = get_downright_coords(_next_tile[0], _next_tile[1]);
+					_next_tile = get_downleft_coords(_next_tile[0], _next_tile[1]);
 					kill_enemy_on_hex(_next_tile[0], _next_tile[1]);
 				}
 			}
@@ -194,7 +194,7 @@ function cast_fire(_direction_number) {
 				kill_enemy_on_hex(_next_tile[0], _next_tile[1]);
 				if (!down_is_wall(_next_tile[0], _next_tile[1])) {
 					array_push(fire_target, [x, y + 48 + 48 + 48]);
-					_next_tile = get_downright_coords(_next_tile[0], _next_tile[1]);
+					_next_tile = get_down_coords(_next_tile[0], _next_tile[1]);
 					kill_enemy_on_hex(_next_tile[0], _next_tile[1]);
 				}
 			}
