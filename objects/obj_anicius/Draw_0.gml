@@ -258,6 +258,6 @@ else if (!potion_hover and potion_active == 3) {
 	}
 	if ((!downright_is_wall(curr_row, curr_column) or !upright_is_wall(curr_row, curr_column)) and !upright_is_wall(_downright_tile[0], _downright_tile[1])) {
 		draw_sprite_ext(spr_tile_blowback, 0, x + 36 + 36, y - 24 + 24, 1, 1, 0, c_white, 0.5);
-	}
+	} */
 }
 
