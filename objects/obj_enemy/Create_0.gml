@@ -9,8 +9,6 @@ is_stunned = false;
 
 function take_action() {
 	if (is_stunned) {
-		image_angle = 181;
-		is_stunned = false;
 		return;
 	}
 	move_enemy(random_legal_move(curr_row, curr_column));
@@ -19,9 +17,6 @@ function take_action() {
 function move_enemy(_direction_number) {
 	//Handles pixel movement and updates row and column coords
 	//Direction is based of _direction_number; 1 is up-right continueing counter-clockwise
-	if (is_moving) {
-		return
-	}
 	is_moving = true
 	switch (_direction_number){
 		//Move up-right
@@ -63,6 +58,90 @@ function move_enemy(_direction_number) {
 		default:
 			return;
 	}
+}
+
+function get_knocked(_direction_number) {
+	var _next_tile = [curr_row, curr_column];
+		switch (_direction_number){
+			case 1: 
+				if (upright_is_empty(_next_tile[0], _next_tile[1])) {
+					_next_tile = get_upright_coords(_next_tile[0], _next_tile[1]);
+					target_x = x + 36;
+					target_y = y - 24;
+					move_coords(1);
+					if (upright_is_empty(_next_tile[0], _next_tile[1])) {
+						target_x += 36;
+						target_y -= 24;
+						move_coords(1);
+					}
+				}
+			break;
+			case 2: 
+				if (up_is_empty(_next_tile[0], _next_tile[1])) {
+					_next_tile = get_up_coords(_next_tile[0], _next_tile[1]);
+					target_y -= 48;
+					move_coords(2);
+					if (up_is_empty(_next_tile[0], _next_tile[1])) {
+						target_y -= 48;
+						move_coords(2);
+					}
+				}
+			break;
+			case 3: 
+				if (upleft_is_empty(_next_tile[0], _next_tile[1])) {
+					_next_tile = get_upleft_coords(_next_tile[0], _next_tile[1]);
+					target_x -= 36;
+					target_y -= 24;
+					move_coords(3);
+					if (upleft_is_empty(_next_tile[0], _next_tile[1])) {
+						target_x -= 36;
+						target_y -= 24;
+						move_coords(3);
+					}
+				}
+			break;
+			case 4: 
+				if (downleft_is_empty(_next_tile[0], _next_tile[1])) {
+					_next_tile = get_downleft_coords(_next_tile[0], _next_tile[1]);
+					target_x -= 36;
+					target_y += 24;
+					move_coords(4);
+					if (downleft_is_empty(_next_tile[0], _next_tile[1])) {
+						target_x -= 36;
+						target_y += 24;
+						move_coords(4);
+					}
+				}
+			break;
+			case 5: 
+				if (down_is_empty(_next_tile[0], _next_tile[1])) {
+					_next_tile = get_down_coords(_next_tile[0], _next_tile[1]);
+					target_y += 48;
+					move_coords(5);
+					if (down_is_empty(_next_tile[0], _next_tile[1])) {
+						target_y += 48;
+						move_coords(5);
+					}
+				}
+			break;
+			case 6: 
+				if (downright_is_empty(_next_tile[0], _next_tile[1])) {
+					_next_tile = get_downright_coords(_next_tile[0], _next_tile[1]);
+					target_x += 36
+					target_y += 24
+					move_coords(6);
+					if (downright_is_empty(_next_tile[0], _next_tile[1])) {
+						target_x += 36;
+						target_y += 24;
+						move_coords(6);
+					}
+				}
+			break;
+			default:
+				return;
+		}
+		is_stunned = true;
+		image_angle = 181;
 }
 
 function move_coords(_direction_number) {

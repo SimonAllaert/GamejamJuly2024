@@ -53,6 +53,9 @@ function kill_enemy_on_hex(_row, _col) {
 	return false;
 }
 
-function blowback_enemy_on_hex(_row, _col, _direction) {
+function blowback_enemy_on_hex(_row, _col, _direction_number) {
 	var _enemy = get_enemy_on_hex(_row, _col);
+	if (_enemy != noone) {
+		_enemy.get_knocked(_direction_number);
+	}
 }
