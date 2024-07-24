@@ -1,17 +1,18 @@
 /*=========LIGHTING START==========*/
 
+//Draw the shadows cast by the walls
 function lighting() {
-	surface_set_target(surf)
+	surface_set_target(surf) //Set the surface to draw the shadows in
 	draw_clear_alpha(0, 0)
 
-	vertex_begin(vertex_buffer, vertex_format)
-	for (row = 0; row < array_length(global.layout); row++) {
+	vertex_begin(vertex_buffer, vertex_format)	//Start a polygon
+	for (row = 0; row < array_length(global.layout); row++) { 
 		for (col = 0; col < array_length(global.layout[0]); col++) {
-			if global.layout[row][col] != 1 continue
-			corner_points = get_ch(hex_to_pixel(row, col))
-			for (i = 0; i < array_length(corner_points) - 1; i++) 
-				project_shadow(vertex_buffer, corner_points[i], corner_points[i+1], [x, y])
-			project_shadow(vertex_buffer, corner_points[array_length(corner_points) - 1], corner_points[0], [x, y])
+			if global.layout[row][col] != 1 continue //for all walls:
+			corner_points = get_ch(hex_to_pixel(row, col)) //get the corner points
+			for (i = 0; i < array_length(corner_points) - 1; i++) //for all the corner points in order, 2 by 2:
+				project_shadow(vertex_buffer, corner_points[i], corner_points[i+1], [x, y]) //project shadow of that line
+			project_shadow(vertex_buffer, corner_points[array_length(corner_points) - 1], corner_points[0], [x, y]) 
 		}
 	}
 	vertex_end(vertex_buffer)

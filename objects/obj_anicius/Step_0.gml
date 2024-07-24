@@ -26,7 +26,8 @@ if (image_angle > 0) {
 
 /*==========LIGHTING START==========*/
 
+//Create the surface to draw shadows on
 if (!surface_exists(surf))
-	surf = surface_create(room_width, room_height) //TODO: map width, map height
+	surf = surface_create(room_width, room_height)
 
 /*==========LIGHTING END==========*/

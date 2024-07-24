@@ -423,8 +423,10 @@ function drink_pot(_pot_id) {
 
 /*==========LIGHTING START==========*/
 
+//the variable that will contain the shadow surface
 surf = -1
 
+//Create the vertex map that will contain the shadows
 vertex_format_begin()
 vertex_format_add_position()
 vertex_format_add_color()
