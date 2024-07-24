@@ -5,6 +5,8 @@ function scr_los(_curr_tile, _target_tile) {
 	
 }
 
+//Create a quadriliteral consisting of the wall segment between _wallpoint_a and _wallpoint_b 
+//and the shadow vectors between _lightpoint and both wallpoints and store it in the _vertex_buffer
 function project_shadow(_vertex_buffer, _wallpoint_a, _wallpoint_b, _lightpoint) {
 	var _shadow_a = get_shadow_vector(_lightpoint, _wallpoint_a)
 	var _shadow_b = get_shadow_vector(_lightpoint, _wallpoint_b)
@@ -24,6 +26,8 @@ function project_shadow(_vertex_buffer, _wallpoint_a, _wallpoint_b, _lightpoint)
 	vertex_argb(_vertex_buffer, $ff1F1F1F);
 }
 
+//Return the shadow vector from _p1 (light point) to _p2 (wall point)
+//the shadow vector is a vector long enough to always end up outside the room
 function get_shadow_vector(_p1, _p2) {
 	var _shadow_length = 2000
 	var _dx = _p2[0] - _p1[0]
@@ -40,10 +44,10 @@ function get_ch(_tile_coords) {
 	var _topright = [_real_x + 12, _real_y - 24]
 	var _righttop = [_real_x + 23, _real_y - 2]
 	var _rightbottom = [_real_x + 23, _real_y + 3]
-	var _bottomright = [_real_x + 12, _real_y + 23]
-	var _bottomleft = [_real_x - 13, _real_y + 23]
-	var _leftbottom = [_real_x - 24, _real_y + 3]
-	var _lefttop = [_real_x - 24, _real_y - 2]
+	var _bottomright = [_real_x + 12, _real_y + 24]
+	var _bottomleft = [_real_x - 13, _real_y + 24]
+	var _leftbottom = [_real_x - 23, _real_y + 3]
+	var _lefttop = [_real_x - 23, _real_y - 2]
 	return [_topleft, _topright, _righttop, _rightbottom, _bottomright, _bottomleft, _leftbottom, _lefttop]
 }
 
