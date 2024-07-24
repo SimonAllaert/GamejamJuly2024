@@ -7,11 +7,31 @@ target_y = y;
 
 is_stunned = false;
 
-function take_action() {
+function take_action(_row, _col) {
+	//Does not take action if stunned (by ex. Blowback)
 	if (is_stunned) {
 		return;
 	}
-	move_enemy(random_legal_move(curr_row, curr_column));
+	//Makes a random legal move if not in vision
+	if (!enemy_in_vision()) {
+		move_enemy(random_legal_move(curr_row, curr_column));
+	}
+	//TODO implement move directly towards player if in vision
+	//stinky edgecase brain als er 2 enemies voor elkaars voeten lopen
+	var _upright_isempty = upright_is_empty(curr_row, curr_column);
+	var _up_isempty = up_is_empty(curr_row, curr_column);
+	var _upleft_isempty = upleft_is_empty(curr_row, curr_column);
+	var _downleft_isempty = downleft_is_empty(curr_row, curr_column);
+	var _down_isempty = down_is_empty(curr_row, curr_column);
+	var _downright_isempty = downright_is_empty(curr_row, curr_column);
+}
+
+function enemy_in_vision() {
+	return in_vision(x, y)
+		or in_vision(x - sprite_width/2, y - sprite_width/2)
+		or in_vision(x + sprite_width/2, y - sprite_width/2)
+		or in_vision(x - sprite_width/2, y + sprite_width/2)
+		or in_vision(x + sprite_width/2, y + sprite_width/2);
 }
 
 function move_enemy(_direction_number) {

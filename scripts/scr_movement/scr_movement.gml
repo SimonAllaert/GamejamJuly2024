@@ -117,7 +117,12 @@ function random_legal_move(_row, _col) {
 	if (downright_is_empty(_row, _col)) {
 		array_push(_empty_moves, 6);
 	}
-	return _empty_moves[irandom(array_length(_empty_moves)-1)];
+	if (array_length(_empty_moves) == 0) {
+		return 0;
+	}
+	else {
+		return _empty_moves[irandom(array_length(_empty_moves)-1)];
+	}
 }
 
 function hex_to_pixel(_row, _col) {

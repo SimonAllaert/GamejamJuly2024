@@ -17,6 +17,8 @@ potion_hover = false;
 potion_active = 0;
 fire_target = [];
 is_dashing = false;
+is_casting_lightning = false;
+lightning_target = [];
 
 function move_anicius(_direction_number) {
 	//Handles pixel movement and updates row and column coords
@@ -384,7 +386,7 @@ function cast_dash(_direction_number) {
 }
 
 function end_cast_dash() {
-	give_enemy_action();
+	give_enemy_action(curr_row, curr_column);
 	potion_active = 0;
 	inventory[1]--;
 }
@@ -405,15 +407,27 @@ function cast_blowback() {
 	
 	//move_anicius(random_legal_move(curr_row, curr_column));
 	image_angle = 10;
-	give_enemy_action();
+	give_enemy_action(curr_row, curr_column);
 	potion_active = 0;
 	inventory[2]--;
 }
 	
+function cast_lightning() {
+	var _tile = instance_nearest(mouse_x, mouse_y, obj_walkway);
+	if (_tile != noone and point_distance(mouse_x, mouse_y, _tile.x, _tile.y) < 27.3
+		and hex_in_vision(_tile.x, _tile.y)) {
+		draw_sprite_ext(spr_tile_lightning, 0, _tile.x, _tile.y, 1, 1, 0, c_white, 0.5);
+		lightning_target = [_tile.x, _tile.y];
+		kill_enemy_on_hex(_tile.row, _tile.col);
+		is_casting_lightning = true;
+		alarm[1] = 11;
+	}
+}
+
 function brew_pot(_pot_id) {
 	//Fire = 0, Dashing = 1, Blowback = 2, Lightning = 3
 	inventory[_pot_id]++;
-	give_enemy_action();
+	give_enemy_action(curr_row, curr_column);
 }
 
 function drink_pot(_pot_id) {
@@ -423,12 +437,33 @@ function drink_pot(_pot_id) {
 
 /*==========LIGHTING START==========*/
 
-surf = -1
+variable_global_set("surf", -1);
 
-vertex_format_begin()
-vertex_format_add_position()
-vertex_format_add_color()
-vertex_format = vertex_format_end()
-vertex_buffer = vertex_create_buffer()
+vertex_format_begin();
+vertex_format_add_position();
+vertex_format_add_color();
+vertex_format = vertex_format_end();
+vertex_buffer = vertex_create_buffer();
+
+function lighting() {
+	surface_set_target(global.surf)
+	draw_clear_alpha(0, 0)
+
+	vertex_begin(vertex_buffer, vertex_format)
+	for (var _row = 0; _row < array_length(global.layout); _row++) {
+		for (var _col = 0; _col < array_length(global.layout[0]); _col++) {
+			if global.layout[_row][_col] != 1 continue
+			corner_points = get_ch(hex_to_pixel(_row, _col))
+			for (var _i = 0; _i < array_length(corner_points) - 1; _i++) {
+				project_shadow(vertex_buffer, corner_points[_i], corner_points[_i+1], [x, y]);
+				project_shadow(vertex_buffer, corner_points[array_length(corner_points) - 1], corner_points[0], [x, y]);
+			}
+		}
+	}
+	vertex_end(vertex_buffer);
+	vertex_submit(vertex_buffer, pr_trianglelist, -1);
+	
+	surface_reset_target();
+}
 
 /*==========LIGHTING END==========*/

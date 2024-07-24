@@ -71,3 +71,7 @@ else if (!potion_hover and potion_active == 2) {
 else if (!potion_hover and potion_active == 3) {
 	cast_blowback();
 }
+//Cast lightning action
+else if (!potion_hover and potion_active == 4) {
+	cast_lightning();
+}

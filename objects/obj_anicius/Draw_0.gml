@@ -1,30 +1,3 @@
-/*=========LIGHTING START==========*/
-
-function lighting() {
-	surface_set_target(surf)
-	draw_clear_alpha(0, 0)
-
-	vertex_begin(vertex_buffer, vertex_format)
-	for (row = 0; row < array_length(global.layout); row++) {
-		for (col = 0; col < array_length(global.layout[0]); col++) {
-			if global.layout[row][col] != 1 continue
-			corner_points = get_ch(hex_to_pixel(row, col))
-			for (i = 0; i < array_length(corner_points) - 1; i++) 
-				project_shadow(vertex_buffer, corner_points[i], corner_points[i+1], [x, y])
-			project_shadow(vertex_buffer, corner_points[array_length(corner_points) - 1], corner_points[0], [x, y])
-		}
-	}
-	vertex_end(vertex_buffer)
-	vertex_submit(vertex_buffer, pr_trianglelist, -1)
-	
-	surface_reset_target()
-	draw_surface(surf, 0, 0)
-}
-
-lighting()
-
-/*=========LIGHTING END==========*/
-
 draw_self()
 
 //Draws preview arrows for movement in direction of mouse if Anicius is not moving
@@ -259,5 +232,25 @@ else if (!potion_hover and potion_active == 3) {
 	if ((!downright_is_wall(curr_row, curr_column) or !upright_is_wall(curr_row, curr_column)) and !upright_is_wall(_downright_tile[0], _downright_tile[1])) {
 		draw_sprite_ext(spr_tile_blowback, 0, x + 36 + 36, y - 24 + 24, 1, 1, 0, c_white, 0.5);
 	} */
+}
+//Draws preview of lightning cast
+else if (!potion_hover and potion_active == 4 and !is_casting_lightning) {
+	var _tile = instance_nearest(mouse_x, mouse_y, obj_walkway);
+	if (_tile != noone and point_distance(mouse_x, mouse_y, _tile.x, _tile.y) < 27.3) {
+		draw_sprite_ext(spr_tile_lightning, 0, _tile.x, _tile.y, 1, 1, 0, c_white, 0.5);
+		lightning_target = [_tile.x, _tile.y];
+	}
+}
+
+/*=========LIGHTING START==========*/
+
+lighting();
+draw_surface(global.surf, 0, 0);
+
+/*=========LIGHTING END==========*/
+
+//Draws lightning cast (should be turned off by Alarm1
+if (is_casting_lightning) {
+	draw_sprite_ext(spr_cast_lightning, 0, lightning_target[0], lightning_target[1], 1, 1, 0, c_white, 1);
 }
 

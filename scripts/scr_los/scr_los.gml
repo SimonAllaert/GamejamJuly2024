@@ -10,18 +10,18 @@ function project_shadow(_vertex_buffer, _wallpoint_a, _wallpoint_b, _lightpoint)
 	var _shadow_b = get_shadow_vector(_lightpoint, _wallpoint_b)
 		
 	vertex_position(_vertex_buffer, _wallpoint_a[0],_wallpoint_a[1]);
-	vertex_argb(_vertex_buffer, $ff000000);
+	vertex_argb(_vertex_buffer, $ff1F1F1F);
 	vertex_position(_vertex_buffer, _wallpoint_b[0],_wallpoint_b[1]);
-	vertex_argb(_vertex_buffer, $ff000000);
+	vertex_argb(_vertex_buffer, $ff1F1F1F);
 	vertex_position(_vertex_buffer, _shadow_a[0],_shadow_a[1]);
-	vertex_argb(_vertex_buffer, $ff000000);
+	vertex_argb(_vertex_buffer, $ff1F1F1F);
 		
 	vertex_position(_vertex_buffer, _wallpoint_b[0],_wallpoint_b[1]);
-	vertex_argb(_vertex_buffer, $ff000000);
+	vertex_argb(_vertex_buffer, $ff1F1F1F);
 	vertex_position(_vertex_buffer, _shadow_a[0],_shadow_a[1]);
-	vertex_argb(_vertex_buffer, $ff000000);
+	vertex_argb(_vertex_buffer, $ff1F1F1F);
 	vertex_position(_vertex_buffer, _shadow_b[0],_shadow_b[1]);
-	vertex_argb(_vertex_buffer, $ff000000);
+	vertex_argb(_vertex_buffer, $ff1F1F1F);
 }
 
 function get_shadow_vector(_p1, _p2) {
@@ -45,4 +45,20 @@ function get_ch(_tile_coords) {
 	var _leftbottom = [_real_x - 24, _real_y + 3]
 	var _lefttop = [_real_x - 24, _real_y - 2]
 	return [_topleft, _topright, _righttop, _rightbottom, _bottomright, _bottomleft, _leftbottom, _lefttop]
+}
+
+function in_vision(_x, _y) {
+	if (variable_global_exists("surf") and surface_exists(global.surf)) {
+		var _color = surface_getpixel_ext(global.surf, _x, _y);
+		return _color != $ff1F1F1F;
+	}
+}
+
+function hex_in_vision(_x, _y) {
+	var _in_vision = in_vision(_x, _y);
+	var _corners = get_ch([_x, _y]);
+	for (var _i = 0; _i < array_length(_corners); ++_i) {
+		_in_vision = _in_vision or in_vision(_corners[_i][0], _corners[_i][1]);
+	}
+	return _in_vision;
 }

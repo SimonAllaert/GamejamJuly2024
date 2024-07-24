@@ -2,15 +2,15 @@
 //Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4, Rat = 5
 variable_global_set("layout", [
 	[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-	[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],
-	[1, 2, 5, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 5, 2, 2, 2, 1],
+	[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 5, 1],
+	[1, 2, 5, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 5, 2, 2, 5, 1],
 	[1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 2, 1],
 	[1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 2, 1],
 	[1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1],
-	[1, 2, 2, 1, 2, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1],
+	[1, 2, 2, 1, 2, 1, 1, 2, 2, 3, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1],
 	[1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 4, 2, 1, 2, 2, 2, 2, 2, 1],
-	[1, 2, 2, 1, 2, 1, 2, 5, 3, 2, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1],
-	[1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],
+	[1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1],
+	[1, 2, 2, 2, 2, 2, 2, 5, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],
 	[1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1],
 	[0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
 ]);
@@ -49,31 +49,29 @@ function step_tilepoint(_c) {
 function generate_map_new() {
 	for (var _r = 0; _r < array_length(global.layout); ++_r) {
 		for (var _c = 0; _c < array_length(global.layout[0]); ++_c) {
-			tile = noone
+			var _tile = noone
 			switch (global.layout[_r][_c]) {
-				case 0: tile = noone; break;
-				case 1: tile = instance_create_depth(tilepoint_x, tilepoint_y, 30, obj_wall); break;
-				case 2: tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway); break;
+				case 0: _tile = noone; break;
+				case 1: _tile = instance_create_depth(tilepoint_x, tilepoint_y, 30, obj_wall); break;
+				case 2: _tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway); break;
 				case 3: 
-					tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
+					_tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
 					anicius = instance_create_depth(tilepoint_x, tilepoint_y, 10, obj_anicius);
 					anicius.curr_row = _r;
 					anicius.curr_column = _c;
 					anicius.inventory = [1, 1, 1, 1];
 					break;
-				case 4: tile = noone; break;
+				case 4: _tile = noone; break;
 				case 5: 
-					tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
-					rat = instance_create_depth(tilepoint_x, tilepoint_y, 10, obj_rat);
-					rat.curr_row = _r;
-					rat.curr_column = _c;
+					_tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
+					var _rat = instance_create_depth(tilepoint_x, tilepoint_y, 20, obj_rat);
+					_rat.curr_row = _r;
+					_rat.curr_column = _c;
 					break;
 			}
-			if tile != noone {
-				tile.real_x = tilepoint_x
-				tile.real_y = tilepoint_y
-				tile.row = _r
-				tile.col = _c
+			if _tile != noone {
+				_tile.row = _r
+				_tile.col = _c
 			}
 			step_tilepoint(_c)
 		}
