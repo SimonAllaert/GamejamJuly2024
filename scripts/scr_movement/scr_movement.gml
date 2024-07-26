@@ -130,3 +130,35 @@ function hex_to_pixel(_row, _col) {
 				? [global.origin[0] + _col * 36, global.origin[1] + 24 + _row * 48] 
 				: [global.origin[0] + _col * 36, global.origin[1] + _row * 48]
 }
+
+function upright_line_to_anicius(_row_anicius, _col_anicius, _coords) {
+	while (_coords[0] != _row_anicius and _coords[1] != _col_anicius) {
+		if (upright_is_wall(_coords[0], _coords[1])) { return false; }
+		else { _coords = get_upright_coords(_coords[0], _coords[1]); }
+	}
+	return true;
+}
+
+function upleft_line_to_anicius(_row_anicius, _col_anicius, _coords) {
+	while (_coords[0] != _row_anicius and _coords[1] != _col_anicius) {
+		if (upleft_is_wall(_coords[0], _coords[1])) { return false; }
+		else { _coords = get_upleft_coords(_coords[0], _coords[1]); }
+	}
+	return true;
+}
+
+function downleft_line_to_anicius(_row_anicius, _col_anicius, _coords) {
+	while (_coords[0] != _row_anicius and _coords[1] != _col_anicius) {
+		if (downleft_is_wall(_coords[0], _coords[1])) { return false; }
+		else { _coords = get_downleft_coords(_coords[0], _coords[1]); }
+	}
+	return true;
+}
+
+function downright_line_to_anicius(_row_anicius, _col_anicius, _coords) {
+	while (_coords[0] != _row_anicius and _coords[1] != _col_anicius) {
+		if (downright_is_wall(_coords[0], _coords[1])) { return false; }
+		else { _coords = get_downright_coords(_coords[0], _coords[1]); }
+	}
+	return true;
+}
