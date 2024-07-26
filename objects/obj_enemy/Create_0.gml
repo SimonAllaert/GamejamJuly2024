@@ -48,7 +48,7 @@ function take_action(_row, _col) {
 			}
 		}
 		//Try to go left, prefering same row
-		else if (curr_row > _row) {
+		else if (curr_column > _col) {
 			if (curr_column % 2 == 0) {
 				if (_downleft_isempty) { move_enemy(4) }
 				else if (_upleft_isempty) { move_enemy(3); }
@@ -61,38 +61,22 @@ function take_action(_row, _col) {
 	}
 	//Try to go up or right
 	else if (curr_row > _row and curr_column < _col) {
-		if (_up_isempty and _upright_isempty) {
-			if (irandom(1) == 0) { move_enemy(1); }
-			else { move_enemy(2); }
-		}
-		else if (_upright_isempty) { move_enemy(1); }
+		if (_upright_isempty) { move_enemy(1); }
 		else if (_up_isempty) { move_enemy(2); }
 	}
 	//Try to go up or left
 	else if (curr_row > _row and curr_column > _col) {
-		if (_up_isempty and _upleft_isempty) {
-			if (irandom(1) == 0) { move_enemy(3); }
-			else { move_enemy(2); }
-		}
-		else if (_upleft_isempty) { move_enemy(3); }
+		if (_upleft_isempty) { move_enemy(3); }
 		else if (_up_isempty) { move_enemy(2); }
 	}
 	//Try to go down or left
 	else if (curr_row < _row and curr_column > _col) {
-		if (_down_isempty and _downleft_isempty) {
-			if (irandom(1) == 0) { move_enemy(4); }
-			else { move_enemy(5); }
-		}
-		else if (_downleft_isempty) { move_enemy(4); }
+		if (_downleft_isempty) { move_enemy(4); }
 		else if (_down_isempty) { move_enemy(5); }
 	}
 	//Try to go down or right
 	else if (curr_row < _row and curr_column < _col) {
-		if (_down_isempty and _downright_isempty) {
-			if (irandom(1) == 0) { move_enemy(6); }
-			else { move_enemy(5); }
-		}
-		else if (_downright_isempty) { move_enemy(6); }
+		if (_downright_isempty) { move_enemy(6); }
 		else if (_down_isempty) { move_enemy(5); }
 	}
 }
