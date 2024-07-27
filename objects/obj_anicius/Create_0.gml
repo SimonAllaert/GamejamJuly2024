@@ -9,9 +9,13 @@ is_moving = false;
 target_x = x;
 target_y = y;
 
+fadein = 1;
+
 locked = false;
 is_dead = false;
 red_flash = false;
+next_room = false;
+fadeout = 0;
 
 //Inventory will be loaded from room object
 //Fire breathing, Dashing, Blowback, Lighting Bolt]
@@ -37,39 +41,44 @@ function move_anicius(_direction_number) {
 			target_x = x + 36
 			target_y = y - 24
 			move_coords(1);
-		break;
+			break;
 		//Move straight up
 		case 2: 
 			target_x = x
 			target_y = y - 48
 			move_coords(2);
-		break;
+			break;
 		//Move up-left
 		case 3: 
 			target_x = x - 36
 			target_y = y - 24
 			move_coords(3);
-		break;
+			break;
 		//Move down-left
 		case 4: 
 			target_x = x - 36
 			target_y = y + 24
 			move_coords(4);
-		break;
+			break;
 		//Move straight down
 		case 5: 
 			target_x = x
 			target_y = y + 48
 			move_coords(5);
-		break;
+			break;
 		//Move down-right
 		case 6: 
 			target_x = x + 36
 			target_y = y + 24
 			move_coords(6);
-		break;
+			break;
 		default:
 			return;
+	}
+	if (global.layout[curr_row][curr_column] == 4) {
+		locked = true;
+		next_room = true;
+		alarm[3] = 30;
 	}
 }
 

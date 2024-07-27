@@ -48,7 +48,9 @@ function generate_map_new() {
 					anicius.curr_column = _c;
 					anicius.inventory = [1, 1, 1, 1];
 					break;
-				case 4: _tile = noone; break;
+				case 4:
+					_tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_stairs);
+					break;
 				case 5: 
 					_tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
 					var _rat = instance_create_depth(tilepoint_x, tilepoint_y, 20, obj_rat);

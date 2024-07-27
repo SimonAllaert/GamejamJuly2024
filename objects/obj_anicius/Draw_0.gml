@@ -276,3 +276,18 @@ if (is_dead) {
 	draw_set_halign(fa_left);
 	draw_set_color(0);
 }
+if (next_room) {
+	fadeout += 0.05;
+	draw_set_alpha(fadeout);
+	draw_rectangle(0, 0, room_width, room_height, false);
+	draw_set_alpha(1);
+}
+if (fadein > 0) {
+	fadein -= 0.05;
+	draw_set_alpha(fadein);
+	draw_rectangle(0, 0, room_width, room_height, false);
+	draw_set_alpha(1);
+}
+else {
+fadein = 0;
+}
