@@ -11,7 +11,7 @@ target_y = y;
 
 fadein = 1;
 
-locked = false;
+locked = true;
 is_dead = false;
 red_flash = false;
 next_room = false;

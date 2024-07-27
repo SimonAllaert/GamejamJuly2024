@@ -1,5 +1,17 @@
+lighting();
 if (!is_dead) {
 	draw_self()
+}
+
+if (fadein > 0) {
+	fadein -= 0.05;
+	draw_set_alpha(fadein);
+	draw_rectangle(0, 0, room_width, room_height, false);
+	draw_set_alpha(1);
+}
+else {
+	fadein = 0;
+	locked = false;
 }
 
 if (!locked) {
@@ -247,7 +259,6 @@ if (!locked) {
 
 	/*=========LIGHTING START==========*/
 
-	lighting();
 	draw_surface(global.surf, 0, 0);
 
 	/*=========LIGHTING END==========*/
@@ -281,13 +292,4 @@ if (next_room) {
 	draw_set_alpha(fadeout);
 	draw_rectangle(0, 0, room_width, room_height, false);
 	draw_set_alpha(1);
-}
-if (fadein > 0) {
-	fadein -= 0.05;
-	draw_set_alpha(fadein);
-	draw_rectangle(0, 0, room_width, room_height, false);
-	draw_set_alpha(1);
-}
-else {
-fadein = 0;
 }
