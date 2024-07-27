@@ -436,7 +436,12 @@ function brew_pot(_pot_id) {
 
 function drink_pot(_pot_id) {
 	//Fire = 0, Dashing = 1, Blowback = 2, Lightning = 3
-	potion_active = _pot_id + 1;
+	if (potion_active == _pot_id + 1) {
+		potion_active = 0;
+	}
+	else {
+		potion_active = _pot_id + 1;
+	}
 }
 
 /*==========LIGHTING START==========*/
