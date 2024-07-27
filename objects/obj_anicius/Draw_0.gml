@@ -1,14 +1,6 @@
 if (!is_dead) {
 	draw_self()
 }
-if (locked or is_dead) {
-	draw_surface(global.surf, 0, 0);
-	draw_set_halign(fa_center);
-	draw_set_color(c_white);
-	draw_text(room_width/2, room_height/2, "You died. Click to restart");
-	draw_set_halign(fa_left);
-	draw_set_color(0);
-}
 
 if (!locked) {
 	//Draws preview arrows for movement in direction of mouse if Anicius is not moving
@@ -272,4 +264,15 @@ else if (red_flash) {
 	draw_rectangle(0, 0, room_width, room_height, false);
 	draw_set_color(0);
 	draw_set_alpha(1);
+}
+
+if (locked or is_dead) {
+	draw_surface(global.surf, 0, 0);
+}
+if (is_dead) {
+	draw_set_halign(fa_center);
+	draw_set_color(c_white);
+	draw_text(room_width/2, room_height/2, "You died. Click to restart");
+	draw_set_halign(fa_left);
+	draw_set_color(0);
 }
