@@ -9,6 +9,10 @@ is_moving = false;
 target_x = x;
 target_y = y;
 
+locked = false;
+is_dead = false;
+red_flash = false;
+
 //Inventory will be loaded from room object
 //Fire breathing, Dashing, Blowback, Lighting Bolt]
 inventory = [0, 0, 0, 0];
@@ -467,3 +471,10 @@ function lighting() {
 }
 
 /*==========LIGHTING END==========*/
+
+function kill_anicius() {
+	locked = true;
+	red_flash = true;
+	is_dead = true;
+	alarm[2] = 7;
+}
