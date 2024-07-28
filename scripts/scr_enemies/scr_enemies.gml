@@ -1,6 +1,6 @@
-function give_enemy_action() {
+function give_enemy_action(_row, _col) {
 	for (var _i = 0; _i < instance_number(obj_enemy); ++_i) {
-		instance_find(obj_enemy, _i).take_action();
+		instance_find(obj_enemy, _i).take_action(_row, _col);
 	}
 }
 
@@ -8,6 +8,16 @@ function get_enemy_on_hex(_row, _col){
 	for (var _i = 0; _i < instance_number(obj_enemy); ++_i) {
 		var _enemy = instance_find(obj_enemy, _i);
 		if (_enemy.curr_row == _row and _enemy.curr_column == _col) {
+			return _enemy;
+		}
+	}
+	return noone;
+}
+
+function get_enemy_on_xy(_x, _y){
+	for (var _i = 0; _i < instance_number(obj_enemy); ++_i) {
+		var _enemy = instance_find(obj_enemy, _i);
+		if (_enemy.x == _x and _enemy.y == _y) {
 			return _enemy;
 		}
 	}
@@ -46,6 +56,15 @@ function downright_is_enemy(_row, _col) {
 
 function kill_enemy_on_hex(_row, _col) {
 	var _enemy = get_enemy_on_hex(_row, _col);
+	if (_enemy != noone) {
+		instance_destroy(_enemy);
+		return true;
+	}
+	return false;
+}
+
+function kill_enemy_on_xy(_x, _y) {
+	var _enemy = get_enemy_on_hex(_x, _y);
 	if (_enemy != noone) {
 		instance_destroy(_enemy);
 		return true;

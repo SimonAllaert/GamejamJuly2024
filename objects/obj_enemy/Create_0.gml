@@ -7,11 +7,16 @@ target_y = y;
 
 is_stunned = false;
 
-function take_action() {
-	if (is_stunned) {
-		return;
-	}
-	move_enemy(random_legal_move(curr_row, curr_column));
+function take_action(_row, _col) {
+	return;
+}
+
+function enemy_in_vision() {
+	return in_vision(x, y)
+		or in_vision(x - sprite_width/2, y - sprite_width/2)
+		or in_vision(x + sprite_width/2, y - sprite_width/2)
+		or in_vision(x - sprite_width/2, y + sprite_width/2)
+		or in_vision(x + sprite_width/2, y + sprite_width/2);
 }
 
 function move_enemy(_direction_number) {
@@ -184,5 +189,11 @@ function move_coords(_direction_number) {
 		break;
 		default:
 			return;
+	}
+}
+
+function slay_anicius(_row, _col) {
+	if (curr_row == _row and curr_column == _col) {
+		instance_find(obj_anicius, 0).kill_anicius();
 	}
 }
