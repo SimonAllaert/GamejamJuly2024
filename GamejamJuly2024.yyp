@@ -52,6 +52,7 @@
     {"id":{"name":"snd_pino","path":"sounds/snd_pino/snd_pino.yy",},},
     {"id":{"name":"spr_anicius","path":"sprites/spr_anicius/spr_anicius.yy",},},
     {"id":{"name":"spr_cast_fire","path":"sprites/spr_cast_fire/spr_cast_fire.yy",},},
+    {"id":{"name":"spr_dragon","path":"sprites/spr_dragon/spr_dragon.yy",},},
     {"id":{"name":"spr_highlight","path":"sprites/spr_highlight/spr_highlight.yy",},},
     {"id":{"name":"spr_map_white","path":"sprites/spr_map_white/spr_map_white.yy",},},
     {"id":{"name":"spr_potion_blowback","path":"sprites/spr_potion_blowback/spr_potion_blowback.yy",},},

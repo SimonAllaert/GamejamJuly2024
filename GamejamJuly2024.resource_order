@@ -12,6 +12,7 @@
     {"name":"snd_pino","order":1,"path":"sounds/snd_pino/snd_pino.yy",},
     {"name":"spr_anicius","order":1,"path":"sprites/spr_anicius/spr_anicius.yy",},
     {"name":"spr_cast_fire","order":3,"path":"sprites/spr_cast_fire/spr_cast_fire.yy",},
+    {"name":"spr_dragon","order":6,"path":"sprites/spr_dragon/spr_dragon.yy",},
     {"name":"spr_rat","order":2,"path":"sprites/spr_rat/spr_rat.yy",},
     {"name":"spr_tile_blowback","order":5,"path":"sprites/spr_tile_blowback/spr_tile_blowback.yy",},
     {"name":"spr_tile_dash","order":4,"path":"sprites/spr_tile_dash/spr_tile_dash.yy",},
