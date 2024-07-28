@@ -2,7 +2,7 @@
   "$GMObject":"",
   "%Name":"obj_dragon",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_dragon",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dragon",
-    "path":"sprites/spr_dragon/spr_dragon.yy",
+    "name":"spr_dragonsecond",
+    "path":"sprites/spr_dragonsecond/spr_dragonsecond.yy",
   },
   "spriteMaskId":null,
   "visible":true,

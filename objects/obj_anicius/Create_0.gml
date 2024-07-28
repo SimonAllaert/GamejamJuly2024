@@ -477,4 +477,8 @@ function kill_anicius() {
 	red_flash = true;
 	is_dead = true;
 	alarm[2] = 7;
+	audio_stop_sync_group(global.sync_group)
+
+
+
 }

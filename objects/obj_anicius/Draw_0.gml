@@ -255,7 +255,7 @@ if (!locked) {
 
 	/*=========LIGHTING START==========*/
 
-	lighting();
+	//lighting();
 	draw_surface(global.surf, 0, 0);
 
 	/*=========LIGHTING END==========*/
@@ -263,6 +263,7 @@ if (!locked) {
 	//Draws lightning cast (should be turned off by Alarm1
 	if (is_casting_lightning) {
 		draw_sprite_ext(spr_cast_lightning, 0, lightning_target[0], lightning_target[1], 1, 1, 0, c_white, 1);
+		
 	}
 
 }
