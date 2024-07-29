@@ -2,7 +2,7 @@
 event_inherited();
 
 
-//Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4, Rat = 5, Dragon = 6
+//Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4, Rat = 5, Dragon = 6, Boss = 7
 variable_global_set("layout", [
 	[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
 	[0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 0],

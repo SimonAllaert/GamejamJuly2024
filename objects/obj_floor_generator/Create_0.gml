@@ -1,5 +1,5 @@
 
-//Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4, Rat = 5, Dragon = 6
+//Nothing = 0, Wall = 1, Path = 2, Spawn = 3, Goal = 4, Rat = 5, Dragon = 6, Boss = 7
 variable_global_set("layout", []);
 
 variable_global_set("origin", [-1, -1])
@@ -64,6 +64,10 @@ function generate_map_new() {
 					_dragon.curr_row = _r;
 					_dragon.curr_column = _c;
 					break;
+				case 7:
+					_tile = instance_create_depth(tilepoint_x, tilepoint_y, 50, obj_walkway);
+					var _boss = instance_create_depth(tilepoint_x, tilepoint_y, 20, obj_boss);
+					_boss.spawn_tentacles();
 			}
 			if _tile != noone {
 				_tile.row = _r

@@ -32,7 +32,3 @@ if (!surface_exists(global.surf))
 
 
 /*==========LIGHTING END==========*/
-
-if (potion_active = (1 or 3 )){
-		
-}

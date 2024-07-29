@@ -25,7 +25,6 @@ if (!locked) {
 			move_anicius(6);
 			give_enemy_action(curr_row, curr_column);
 		}
-	audio_play_sound(snd_step,0,0,1,0,1,1);	
 	}
 	//Cast fire action	
 	else if (!potion_hover and potion_active == 1) {
@@ -83,7 +82,5 @@ if (!locked) {
 	}
 }
 else if (is_dead) {
-	
-	room_restart();
-		
+	room_restart();		
 }

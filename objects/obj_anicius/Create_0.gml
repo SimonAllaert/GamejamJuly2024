@@ -11,7 +11,7 @@ target_y = y;
 
 fadein = 1;
 
-locked = true;
+locked = false;
 is_dead = false;
 red_flash = false;
 next_room = false;
@@ -77,6 +77,7 @@ function move_anicius(_direction_number) {
 		default:
 			return;
 	}
+	audio_play_sound(snd_step,0,0,1,0,1,1);	
 	if (global.layout[curr_row][curr_column] == 4) {
 		locked = true;
 		next_room = true;
@@ -496,7 +497,4 @@ function kill_anicius() {
 	alarm[2] = 7;
 	audio_stop_sync_group(global.sync_group)
 	audio_play_sound(snd_PinoPling,0,0,1,0,1,1);
-
-
-
 }

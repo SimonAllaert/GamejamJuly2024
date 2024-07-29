@@ -1,7 +1,11 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
+    {"name":"obj_boss","order":2,"path":"objects/obj_boss/obj_boss.yy",},
     {"name":"obj_bossroom","order":1,"path":"objects/obj_bossroom/obj_bossroom.yy",},
+    {"name":"obj_tentacle","order":3,"path":"objects/obj_tentacle/obj_tentacle.yy",},
     {"name":"rm_boss","order":1,"path":"rooms/rm_boss/rm_boss.yy",},
+    {"name":"spr_eye","order":1,"path":"sprites/spr_eye/spr_eye.yy",},
+    {"name":"spr_tentacle","order":2,"path":"sprites/spr_tentacle/spr_tentacle.yy",},
   ],
 }

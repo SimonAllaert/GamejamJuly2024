@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_stairs",
-  "eventList":[],
+  "%Name":"obj_tentacle",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_stairs",
+  "name":"obj_tentacle",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_walkway",
-    "path":"objects/obj_walkway/obj_walkway.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_stairs",
-    "path":"sprites/spr_stairs/spr_stairs.yy",
+    "name":"spr_tentacle",
+    "path":"sprites/spr_tentacle/spr_tentacle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

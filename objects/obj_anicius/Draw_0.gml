@@ -1,4 +1,4 @@
-//lighting();
+lighting();
 if (!is_dead) {
 	draw_self()
 }
@@ -11,7 +11,6 @@ if (fadein > 0) {
 }
 else {
 	fadein = 0;
-	locked = false;
 }
 
 if (!locked) {
@@ -280,16 +279,15 @@ if (!locked) {
 
 }
 }
-else if (red_flash) {
+if (locked or is_dead) {
+	draw_surface(global.surf, 0, 0);
+}
+if (red_flash) {
 	draw_set_color(c_red);
 	draw_set_alpha(0.3);
 	draw_rectangle(0, 0, room_width, room_height, false);
 	draw_set_color(0);
 	draw_set_alpha(1);
-}
-
-if (locked or is_dead) {
-	draw_surface(global.surf, 0, 0);
 }
 if (is_dead) {
 	draw_set_halign(fa_center);
