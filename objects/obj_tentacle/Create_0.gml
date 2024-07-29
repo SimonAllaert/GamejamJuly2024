@@ -1,1 +1,0 @@
-direction_number = 0;
