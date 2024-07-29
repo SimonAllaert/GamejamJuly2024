@@ -24,6 +24,8 @@ variable_global_set("origin", [48, 48])
 
 tilepoint_x = global.origin[0];
 tilepoint_y = global.origin[1];
+
+
 volume_GuitarTheme = 0;
 volume_GuitarDemp = 1;
 volume_GuitarMain = 0;

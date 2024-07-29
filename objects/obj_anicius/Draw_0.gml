@@ -1,4 +1,4 @@
-lighting();
+//lighting();
 if (!is_dead) {
 	draw_self()
 }

@@ -1,17 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_fireball",
+  "%Name":"obj_bossroom",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_anicius","path":"objects/obj_anicius/obj_anicius.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_fireball",
+  "name":"obj_bossroom",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_floor_generator",
+    "path":"objects/obj_floor_generator/obj_floor_generator.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_fireball",
-    "path":"sprites/spr_fireball/spr_fireball.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
