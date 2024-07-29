@@ -9,13 +9,14 @@ tilepoint_y = global.origin[1];
 
 anicius = noone;
 
-sync_group = audio_create_sync_group(true);
 
-audio_play_in_sync_group(sync_group,snd_bass);
-audio_play_in_sync_group(sync_group,snd_pino);
-audio_play_in_sync_group(sync_group,snd_drum);
-audio_play_in_sync_group(sync_group,snd_cello)
-audio_sound_gain(snd_pino,1,0);
+variable_global_set("killcount",0);
+
+
+variable_global_set("sync_group", audio_create_sync_group(true));
+
+
+
 
 //audio_start_sync_group(sync_group);
 

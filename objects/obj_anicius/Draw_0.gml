@@ -39,6 +39,7 @@ if (!locked) {
 	}
 	//Draws preview of fire cast
 	else if (!potion_hover and potion_active == 1 and array_length(fire_target) == 0) {
+		audio_play_sound(snd_select,0,0,0.06,0,1,1);
 		var _next_tile = [curr_row, curr_column];
 		if (curr_mouse_angle >= 0 and curr_mouse_angle < 60 and !upright_is_wall(curr_row, curr_column)) {
 			draw_sprite_ext(spr_tile_fire, 0, x + 36, y - 24, 1, 1, 0, c_white, 0.5);
@@ -50,6 +51,7 @@ if (!locked) {
 					draw_sprite_ext(spr_tile_fire, 0, x + 36 + 36 + 36, y - 24 - 24 - 24, 1, 1, 0, c_white, 0.5);
 				}
 			}
+			
 		}
 		else if (curr_mouse_angle >= 60 and curr_mouse_angle < 120 and !up_is_wall(curr_row, curr_column)) {
 			draw_sprite_ext(spr_tile_fire, 0, x, y - 48, 1, 1, 0, c_white, 0.5);
@@ -115,6 +117,7 @@ if (!locked) {
 	}
 	//Draws preview of dash cast
 	else if (!potion_hover and potion_active == 2) {
+		audio_play_sound(snd_select,0,0,0.06,0,1,1);
 		var _next_tile = [curr_row, curr_column];
 		if (curr_mouse_angle >= 0 and curr_mouse_angle < 60 and !upright_is_wall(curr_row, curr_column)) {
 			draw_sprite_ext(spr_tile_dash, 0, x + 36, y - 24, 1, 1, 0, c_white, 0.5);
@@ -185,6 +188,7 @@ if (!locked) {
 	}
 	//Draws preview of blowback cast
 	else if (!potion_hover and potion_active == 3) {
+		audio_play_sound(snd_select,0,0,0.06,0,1,1);
 		//All adjacent hexes to check outer ring later
 		var _upright_tile = get_upright_coords(curr_row, curr_column);
 		var _up_tile = get_up_coords(curr_row, curr_column);
@@ -251,6 +255,7 @@ if (!locked) {
 	}
 	//Draws preview of lightning cast
 	else if (!potion_hover and potion_active == 4 and !is_casting_lightning) {
+		audio_play_sound(snd_select,0,0,0.06,0,1,1);
 		var _tile = instance_nearest(mouse_x, mouse_y, obj_walkway);
 		if (_tile != noone and point_distance(mouse_x, mouse_y, _tile.x, _tile.y) < 27.3) {
 			draw_sprite_ext(spr_tile_lightning, 0, _tile.x, _tile.y, 1, 1, 0, c_white, 0.5);
@@ -266,9 +271,15 @@ if (!locked) {
 
 	//Draws lightning cast (should be turned off by Alarm1
 	if (is_casting_lightning) {
-		draw_sprite_ext(spr_cast_lightning, 0, lightning_target[0], lightning_target[1], 1, 1, 0, c_white, 1);
+		repeat(100){
+		draw_sprite_ext(spr_cast_lightning, p_index, lightning_target[0], lightning_target[1], 1, 1, 0, c_white, 1);
+		
+		p_index += 0.1;
+		
 	}
+	p_index = 0;
 
+}
 }
 else if (red_flash) {
 	draw_set_color(c_red);

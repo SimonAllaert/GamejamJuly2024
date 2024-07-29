@@ -17,6 +17,8 @@ red_flash = false;
 next_room = false;
 fadeout = 0;
 
+p_index = 0;
+
 //Inventory will be loaded from room object
 //Fire breathing, Dashing, Blowback, Lighting Bolt]
 inventory = [0, 0, 0, 0];
@@ -440,6 +442,7 @@ function cast_lightning() {
 function brew_pot(_pot_id) {
 	//Fire = 0, Dashing = 1, Blowback = 2, Lightning = 3
 	inventory[_pot_id]++;
+	audio_play_sound(snd_drink,0,0,0.4,0,1,1);
 	give_enemy_action(curr_row, curr_column);
 }
 
@@ -491,4 +494,9 @@ function kill_anicius() {
 	red_flash = true;
 	is_dead = true;
 	alarm[2] = 7;
+	audio_stop_sync_group(global.sync_group)
+	audio_play_sound(snd_PinoPling,0,0,1,0,1,1);
+
+
+
 }
