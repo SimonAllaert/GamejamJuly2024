@@ -25,6 +25,7 @@ if (!locked) {
 			move_anicius(6);
 			give_enemy_action(curr_row, curr_column);
 		}
+	audio_play_sound(snd_step,0,0,1,0,1,1);	
 	}
 	//Cast fire action	
 	else if (!potion_hover and potion_active == 1) {
@@ -46,6 +47,7 @@ if (!locked) {
 		else if (curr_mouse_angle >= 300 and curr_mouse_angle < 360 and !downright_is_wall(curr_row, curr_column)) {
 			cast_fire(6);
 		}
+		audio_play_sound(snd_fire,0,0,1,0,1,1);
 	}
 	//Cast dash action
 	else if (!potion_hover and potion_active == 2) {
@@ -67,14 +69,17 @@ if (!locked) {
 		else if (curr_mouse_angle >= 300 and curr_mouse_angle < 360 and !downright_is_wall(curr_row, curr_column)) {
 			cast_dash(6);
 		}
+		audio_play_sound(snd_run, 0,0,1,0,1,1)
 	}
 	//Cast blowback action
 	else if (!potion_hover and potion_active == 3) {
 		cast_blowback();
+		audio_play_sound(snd_wind,0,0,1,0,1,1);
 	}
 	//Cast lightning action
 	else if (!potion_hover and potion_active == 4) {
 		cast_lightning();
+		audio_play_sound(snd_lightning, 0,0,1,0,1,1);
 	}
 }
 else if (is_dead) {
